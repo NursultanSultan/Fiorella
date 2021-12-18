@@ -34,7 +34,7 @@ using Fiorello.ViewModel;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"38b8a08513cbf62b3cebc3d8c5a08452a97591d6", @"/Views/Progres/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4810dd83e6dd55f1c6387eae003c893afa2e8019", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"decffa2262467382fc21b92705d27a4977a41275", @"/Views/_ViewImports.cshtml")]
     public class Views_Progres_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

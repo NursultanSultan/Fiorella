@@ -148,3 +148,8 @@ D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\runtimes\win-x86\nativ
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\Shared\_AdminLayout.cshtml.g.cs
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\_ViewStart.cshtml.g.cs
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\_ViewImports.cshtml.g.cs
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\Dashboard\Index.cshtml.g.cs
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\Category\Index.cshtml.g.cs
