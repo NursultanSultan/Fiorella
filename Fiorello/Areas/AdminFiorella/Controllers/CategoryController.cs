@@ -21,5 +21,37 @@ namespace Fiorello.Areas.AdminFiorella.Controllers
         {
             return View(_context.Categories);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        public IActionResult Detail(int id)
+        {
+            return Json(new
+            {
+                Action = "detail",
+                Id = id
+            });
+        }
+
+        public IActionResult Update(int id)
+        {
+            return Json(new
+            {
+                Action = "update",
+                Id = id
+            });
+        }
+
+        public IActionResult Delete(int id)
+        {
+            return Json(new
+            {
+                Action = "delete",
+                Id = id
+            });
+        }
     }
 }

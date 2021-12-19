@@ -153,3 +153,5 @@ D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiore
 D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\_ViewImports.cshtml.g.cs
 D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\Dashboard\Index.cshtml.g.cs
 D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\Category\Index.cshtml.g.cs
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\Product\Index.cshtml.g.cs
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\Exspert\Index.cshtml.g.cs

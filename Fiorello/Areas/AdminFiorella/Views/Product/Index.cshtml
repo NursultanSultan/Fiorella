@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Index";
+    int count = 1;
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Product</h4>
+            
+                
+            <div class="table-responsive">
+                <table class="table table-bordered mt-3">
+                    <thead>
+                        <tr>
+                            <th> # </th>
+                            <th> Product name </th>
+                            <th> Image </th>
+                            <th> Price </th>
+                            <th> Count</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var pr in Model)
+                        {
+                            <tr>
+                                <td> @count </td>
+                                <td> @pr.Name </td>
+                                <td> </td>
+                                <td> @pr.Price </td>
+                                <td> @pr.Conut </td>
+                                
+                            </tr>
+                            count++;
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
