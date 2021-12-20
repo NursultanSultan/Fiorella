@@ -18,7 +18,6 @@ namespace Fiorello.Controllers
         public async  Task<IActionResult> Index()
         {
 
-
             HomeViewModel HomeVM = new HomeViewModel
             {
                 Sliders = await _db.Sliders.ToListAsync(),

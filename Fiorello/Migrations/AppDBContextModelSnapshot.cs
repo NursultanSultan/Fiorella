@@ -232,6 +232,21 @@ namespace Fiorello.Migrations
                     b.ToTable("Says");
                 });
 
+            modelBuilder.Entity("Fiorello.Models.Settings", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Settings");
+                });
+
             modelBuilder.Entity("Fiorello.Models.Slider", b =>
                 {
                     b.Property<int>("Id")

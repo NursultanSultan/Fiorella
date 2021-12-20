@@ -35,5 +35,7 @@ namespace Fiorello.DAL
         public DbSet<BlogMain> Blogs { get; set; }
 
         public DbSet<Say> Says { get; set; }
+
+        public DbSet<Settings> Settings { get; set; }
     }
 }

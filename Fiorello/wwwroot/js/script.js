@@ -1,5 +1,28 @@
 $(document).ready(function () {
 
+    
+    $(document).on("click", "#btn_load", function () {
+        let proCount=$(".products").children().length;
+        let dbProductsCount = $("#productCount").val();
+        $.ajax({
+            url: "/Product/LoadProducts",
+            data: {
+                skip: proCount
+            },
+            Method: "GET",
+            success: function (result) {
+                $(".products").append(result)
+                proCount = $(".products").children().length;
+                if (proCount == dbProductsCount) {
+                    console.log(result);
+                    $("#btn_load").remove();
+                }
+            }
+            
+
+        })
+    })
+
     // HEADER
 
     $(document).on('click', '#search', function () {
