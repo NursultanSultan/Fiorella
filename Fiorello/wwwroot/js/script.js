@@ -4,6 +4,7 @@ $(document).ready(function () {
     $(document).on("click", "#btn_load", function () {
         let proCount=$(".products").children().length;
         let dbProductsCount = $("#productCount").val();
+
         $.ajax({
             url: "/Product/LoadProducts",
             data: {
@@ -18,9 +19,37 @@ $(document).ready(function () {
                     $("#btn_load").remove();
                 }
             }
-            
 
         })
+
+        //-----Fetch start------
+
+        //const url =`/Product/LoadProducts`;
+        //let data = URLSearchParams();
+        //data.append(skip,proCount);
+        
+        //const options = {
+        //    Method: `GET`,
+        //    body: data
+        //};
+
+        //fetch(url, options)
+        //    .then(data => {
+        //        proCount = $(".products").children().length;
+        //        if (proCount == dbProductsCount) {
+        //            console.log(result);
+        //            $("#btn_load").remove();
+        //        }
+        //        someSuccessFunction(data);
+        //    })
+           
+        //    .catch(error => {
+        //        someErrorFunction(error);
+        //    });
+
+        //-----Fetch end------
+        
+
     })
 
     // HEADER

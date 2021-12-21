@@ -20,9 +20,6 @@ namespace Fiorello.Controllers
                                     .Count();
         }
 
-       
-
-
         public IActionResult Index()
         {
             ViewBag.productsCount = _productCount;
@@ -41,7 +38,7 @@ namespace Fiorello.Controllers
             {
                 return Json(new
                 {
-                    Info = "Aqillisanda indi sen"
+                    Info = "stopped get some help"
                 });
             }
             var model = _context.Products
