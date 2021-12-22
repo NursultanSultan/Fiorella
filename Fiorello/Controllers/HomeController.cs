@@ -30,13 +30,14 @@ namespace Fiorello.Controllers
                                     .Where(c => c.IsDeleted == false)
                                     .ToListAsync(),
 
-                Products = await _db.Products
-                                .Where(p => p.IsDeleted == false)
-                                .Include(p => p.Category)
-                                .Include(p => p.Images)
-                                .OrderByDescending(p => p.Id)
-                                .Take(8)
-                                .ToListAsync(),
+                //view componente gore commentledim
+                //Products = await _db.Products
+                //                .Where(p => p.IsDeleted == false)
+                //                .Include(p => p.Category)
+                //                .Include(p => p.Images)
+                //                .OrderByDescending(p => p.Id)
+                //                .Take(8)
+                //                .ToListAsync(),
 
                 AboutMain = await _db.AboutMain.FirstOrDefaultAsync(),
                 AboutIcon = await _db.AboutIcon.ToListAsync(),

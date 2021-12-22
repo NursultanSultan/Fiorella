@@ -44,15 +44,15 @@ namespace Fiorello.Controllers
                     Info = "stopped get some help"
                 });
             }
-            var model = _context.Products
-                                .Where(p => p.IsDeleted == false)
-                                .OrderByDescending(p => p.Id)
-                                .Skip(skip)
-                                .Take(count)
-                                .Include(p => p.Images)
-                                .ToList();
+            //var model = _context.Products
+            //                    .Where(p => p.IsDeleted == false)
+            //                    .OrderByDescending(p => p.Id)
+            //                    .Skip(skip)
+            //                    .Take(count)
+            //                    .Include(p => p.Images)
+            //                    .ToList();
 
-            return PartialView("_ProductPartial", model);
+            return ViewComponent("Product") ;
         }
 
         [HttpPost]
@@ -105,13 +105,39 @@ namespace Fiorello.Controllers
             return basket;
         }
 
-        public IActionResult Basket()
+        public async Task<IActionResult> Basket()
         {
-            var basketModel = _context.Products
-                                .Where(p => p.IsDeleted == false)
-                                .Include(p => p.Images);
-            //return Json(JsonConvert.DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]));
-            return PartialView("_BasketPartial");
+            List<BasketVM> basket = GetBasket();
+            List<BasketItemVM> model = await GetBasketList(basket);
+            return View(model);
+        }
+
+        private async Task<List<BasketItemVM>> GetBasketList(List<BasketVM> basket)
+        {
+            List<BasketItemVM> model = new List<BasketItemVM>();
+            foreach (var item in basket)
+            {
+                Product dbproduct = await _context.Products
+                                            .Include(p => p.Images)
+                                            .FirstOrDefaultAsync(p => p.Id == item.Id);
+                BasketItemVM itemVM =await GetBasketItem(item, dbproduct);
+                model.Add(itemVM);
+            }
+            return model;
+        }
+
+        private async Task<BasketItemVM> GetBasketItem(BasketVM item ,Product dbproduct)
+        {
+            return new BasketItemVM
+            {
+                Id = item.Id,
+                Name = dbproduct.Name,
+                Count = item.Count,
+                Image = dbproduct.Images.Where(i => i.IsMain).FirstOrDefault().Image,
+                Price = dbproduct.Price,
+
+
+            };
         }
     }
 }

@@ -432,3 +432,6 @@ D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\Microsoft.Extensions.D
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Views\Product\Basket.cshtml.g.cs
 D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BasketPartial.cshtml.g.cs
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Product\Default.cshtml.g.cs
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Header\Default.cshtml.g.cs
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs
