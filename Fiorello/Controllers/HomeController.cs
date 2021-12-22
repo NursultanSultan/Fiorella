@@ -1,5 +1,6 @@
 ﻿using Fiorello.DAL;
 using Fiorello.ViewModel;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -14,9 +15,12 @@ namespace Fiorello.Controllers
         {
             _db = db;
         }
+        
 
         public async  Task<IActionResult> Index()
         {
+
+            //HttpContext.Session.SetString("name", "Nursultan");
 
             HomeViewModel HomeVM = new HomeViewModel
             {
@@ -50,5 +54,11 @@ namespace Fiorello.Controllers
             };
             return View(HomeVM);
         }
+
+        //public IActionResult Test()
+        //{
+        //    var session = HttpContext.Session.GetString("name");
+        //    return Json(session);
+        //}
     }
 }

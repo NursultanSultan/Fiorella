@@ -1,6 +1,9 @@
 ﻿using Fiorello.DAL;
+using Fiorello.Models;
+using Fiorello.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,6 +55,63 @@ namespace Fiorello.Controllers
             return PartialView("_ProductPartial", model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
 
+        public async Task<IActionResult> AddBasket(int? id)
+        {
+            if (id == null) return NotFound();
+            Product dbProduct = await _context.Products.FindAsync(id);
+            if (dbProduct == null) return BadRequest();
+
+            List<BasketVM> basket = GetBasket();
+            UpdateBasket((int)id, basket);
+
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        private void UpdateBasket(int id , List<BasketVM> basket)
+        {
+            BasketVM basketProduct = basket.Find(p => p.Id == id);
+            if (basketProduct == null)
+            {
+                basket.Add(new BasketVM
+                {
+                    Id = id ,
+                    Count = 1
+                }); 
+            }
+            else
+            {
+                basketProduct.Count += 1;
+            }
+            Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
+        }
+
+        private List<BasketVM> GetBasket()
+        {
+            List<BasketVM> basket;
+            if (Request.Cookies["basket"] != null)
+            {
+                basket = JsonConvert
+                        .DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]);
+            }
+            else
+            {
+                basket = new List<BasketVM>();
+            }
+
+            return basket;
+        }
+
+        public IActionResult Basket()
+        {
+            var basketModel = _context.Products
+                                .Where(p => p.IsDeleted == false)
+                                .Include(p => p.Images);
+            //return Json(JsonConvert.DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]));
+            return PartialView("_BasketPartial");
+        }
     }
 }
