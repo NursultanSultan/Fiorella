@@ -17,11 +17,12 @@ namespace Fiorello.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var model = _context.Products
+            var model = await _context.Products
                                 .Where(p => p.IsDeleted == false)
                                 .Include(p => p.Images)
                                 .Include(p => p.Category)
                                 .OrderByDescending(p => p.Id)
+                                .Skip(8)
                                 .Take(8)
                                 .ToListAsync();
             return View(await Task.FromResult(model));
