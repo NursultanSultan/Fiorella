@@ -27,6 +27,13 @@ namespace Fiorello.Areas.AdminFiorella.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(string name)
+        {
+            return Json(name);
+        }
+
         public IActionResult Detail(int id)
         {
             return Json(new

@@ -18,8 +18,20 @@ namespace Fiorello.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var basket = JsonConvert
-                            .DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]);
+            List<BasketVM> basket;
+            if (Request.Cookies["basket"] != null)
+            {
+                basket = JsonConvert
+                        .DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]);
+            }
+            else
+            {
+                basket = new List<BasketVM>();
+            }
+
+            //var basket = JsonConvert
+            //                .DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]);
+
             if (basket != null)
             {
                 ViewBag.BasketItemCount = basket.Count;

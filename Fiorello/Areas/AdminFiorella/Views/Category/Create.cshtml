@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="card-body">
+    <h4 class="card-title">Create Category</h4>
+    <p class="card-description"> Basic form layout </p>
+    <form class="forms-sample" method="post">
+        <div class="form-group">
+            <label for="Category">Category</label>
+            <input type="text" class="form-control" name="Name" id="category" placeholder="Category name">
+        </div>
+        
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <button class="btn btn-dark" asp-action="Index">Cancel</button>
+    </form>
+</div>
