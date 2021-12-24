@@ -36,6 +36,6 @@ namespace Fiorello.DAL
 
         public DbSet<Say> Says { get; set; }
 
-        public DbSet<Settings> Settings { get; set; }
+        public DbSet<Setting> Setting { get; set; }
     }
 }

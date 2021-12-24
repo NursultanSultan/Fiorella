@@ -1,15 +1,57 @@
-﻿@model IEnumerable<Product>
+﻿@model List<BasketItemVM>
 @{
     ViewData["Title"] = "Basket";
+    int count = 1;
+    decimal total = 0;
 }
 
 <div class="container">
+    <div class="row">
 
-    <div class="row products">
+        @if (Model.Count != 0)
+        {
 
-        <partial name="_BasketPartial"/>
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Selected Count</th>
+                        <th scope="col">Stock Count</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var selectedProduct in Model)
+                    {
+                        total += selectedProduct.Price * selectedProduct.Count;
+                        <tr>
+                            <th scope="row">@count</th>
+                            <td>@selectedProduct.Name</td>
+                            <td><img height="100" src="~/img/@selectedProduct.Image" alt="Alternate Text" /></td>
+                            <td>@selectedProduct.Count</td>
+                            <td>@selectedProduct.StockCount</td>
+                            <td>@selectedProduct.Price</td>
+                        </tr>
+                        count++;
+
+
+                    }
+
+                </tbody>
+            </table>
+
+            <p><b>Total Price = @total</b></p>
+        }
+
+        else
+        {
+            <h2>Your Basket Is Empty !</h2>
+        }
+
+
 
     </div>
-    
 </div>
-

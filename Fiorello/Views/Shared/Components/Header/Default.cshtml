@@ -1,11 +1,13 @@
-﻿
+﻿@model Dictionary<string,string>
+
 <header>
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <nav class="navbar navbar-expand-lg d-flex d-lg-block justify-content-between d-xl-flex navbar-light py-3 py-lg-0">
                     <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                        <img src="~/img/logo.png" alt="" id="logo">
+                        <img src="~/img/@Model["header_logo"]" alt="" id="logo">
+                        <p>@Model["phone"]</p>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -135,8 +137,8 @@
                                 </ul>
                             </li>
                             <li class="nav-item my-auto shop-cart">
-                                <i class="fas fa-shopping-bag"></i>
-                                <sup class="rounded-circle">0</sup>
+                                <i id="basket_click" class="fas fa-shopping-bag"></i>
+                                <sup class="rounded-circle">@ViewBag.BasketItemCount</sup>
                                 <span><a asp-controller="Product" asp-action="Basket">CART ($0)</a></span>
                                 
                             </li>

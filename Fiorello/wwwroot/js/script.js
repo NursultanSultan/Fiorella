@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     
+    
     $(document).on("click", "#btn_load", function () {
         let proCount=$(".products").children().length;
         let dbProductsCount = $("#productCount").val();

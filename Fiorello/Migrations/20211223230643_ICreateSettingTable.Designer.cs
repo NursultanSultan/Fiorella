@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fiorello.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20211220223542_ICreateSettingsTable")]
-    partial class ICreateSettingsTable
+    [Migration("20211223230643_ICreateSettingTable")]
+    partial class ICreateSettingTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -234,19 +234,22 @@ namespace Fiorello.Migrations
                     b.ToTable("Says");
                 });
 
-            modelBuilder.Entity("Fiorello.Models.Settings", b =>
+            modelBuilder.Entity("Fiorello.Models.Setting", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
+                    b.Property<string>("Key")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Settings");
+                    b.ToTable("Setting");
                 });
 
             modelBuilder.Entity("Fiorello.Models.Slider", b =>

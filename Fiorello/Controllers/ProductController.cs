@@ -34,26 +34,26 @@ namespace Fiorello.Controllers
                                 .Take(8));
         }
 
-        public IActionResult LoadProducts(int skip)
-        {
-            var count = _context.Settings.FirstOrDefault().Count;
-            if (_productCount == skip)
-            {
-                return Json(new
-                {
-                    Info = "stopped get some help"
-                });
-            }
-            //var model = _context.Products
-            //                    .Where(p => p.IsDeleted == false)
-            //                    .OrderByDescending(p => p.Id)
-            //                    .Skip(skip)
-            //                    .Take(count)
-            //                    .Include(p => p.Images)
-            //                    .ToList();
+        //public IActionResult LoadProducts(int skip)
+        //{
+        //    var count = _context.Setting.Value;
+        //    if (_productCount == skip)
+        //    {
+        //        return Json(new
+        //        {
+        //            Info = "stopped get some help"
+        //        });
+        //    }
+        //    //var model = _context.Products
+        //    //                    .Where(p => p.IsDeleted == false)
+        //    //                    .OrderByDescending(p => p.Id)
+        //    //                    .Skip(skip)
+        //    //                    .Take(count)
+        //    //                    .Include(p => p.Images)
+        //    //                    .ToList();
 
-            return ViewComponent("Product") ;
-        }
+        //    return ViewComponent("Product") ;
+        //}
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -133,6 +133,7 @@ namespace Fiorello.Controllers
                 Id = item.Id,
                 Name = dbproduct.Name,
                 Count = item.Count,
+                StockCount = dbproduct.Conut,
                 Image = dbproduct.Images.Where(i => i.IsMain).FirstOrDefault().Image,
                 Price = dbproduct.Price,
 
