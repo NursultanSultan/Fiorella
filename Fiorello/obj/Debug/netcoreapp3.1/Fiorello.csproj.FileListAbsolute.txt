@@ -436,3 +436,6 @@ D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Com
 D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Header\Default.cshtml.g.cs
 D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs
 D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\Category\Create.cshtml.g.cs
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\Category\Update.cshtml.g.cs
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\Slider\Index.cshtml.g.cs
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\Slider\Create.cshtml.g.cs

@@ -1,5 +1,7 @@
 ﻿using Fiorello.DAL;
+using Fiorello.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,9 +31,19 @@ namespace Fiorello.Areas.AdminFiorella.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(string name)
+        public async Task<IActionResult> Create(Category category)
         {
-            return Json(name);
+            if (!ModelState.IsValid) return View();
+            bool isExist = _context.Categories.Any(c => c.Name.ToLower().Trim() == category.Name.ToLower().Trim());
+
+            if (isExist)
+            {
+                ModelState.AddModelError("Name", "Already Exist");
+                return View();
+            }
+            await _context.Categories.AddAsync(category);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Detail(int id)
@@ -43,15 +55,32 @@ namespace Fiorello.Areas.AdminFiorella.Controllers
             });
         }
 
-        public IActionResult Update(int id)
+        public IActionResult Update()
         {
-            return Json(new
-            {
-                Action = "update",
-                Id = id
-            });
+            return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(Category category)
+        {
+            if (!ModelState.IsValid) return View();
+            bool isExist = _context.Categories.Any(c => c.Name.ToLower().Trim() == category.Name.ToLower().Trim());
+
+            if (isExist)
+            {
+                ModelState.AddModelError("Name", "Already Exist");
+                return View();
+            }
+            var CategoryToUpdate = await _context.Categories.FirstOrDefaultAsync(c => c.Id == category.Id);
+            CategoryToUpdate.Name = category.Name;
+
+            
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+
+        }
         public IActionResult Delete(int id)
         {
             return Json(new
