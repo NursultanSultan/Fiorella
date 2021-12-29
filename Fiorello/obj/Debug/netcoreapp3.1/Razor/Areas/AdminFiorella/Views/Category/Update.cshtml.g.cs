@@ -33,8 +33,15 @@ using Fiorello.ViewModel;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "D:\ASP.Net core\Fiorello\Fiorello\Areas\AdminFiorella\Views\_ViewImports.cshtml"
+using Fiorello.ViewModel.Slider;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0c0fcec967ce3f3bb9998fbeae49bc889e644163", @"/Areas/AdminFiorella/Views/Category/Update.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f25cbc239e8f3e104488d7127235499274a391e7", @"/Areas/AdminFiorella/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c517bccd6d43acb81128a3e3ec779f784b4b845d", @"/Areas/AdminFiorella/Views/_ViewImports.cshtml")]
     public class Areas_AdminFiorella_Views_Category_Update : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Category>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-dark"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -76,7 +83,7 @@ using Fiorello.ViewModel;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<div class=\"card-body\">\r\n    <h4 class=\"card-title\">Create Category</h4>\r\n    <p class=\"card-description\"> Basic form layout </p>\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c0fcec967ce3f3bb9998fbeae49bc889e6441635308", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c0fcec967ce3f3bb9998fbeae49bc889e6441635502", async() => {
                 WriteLiteral(@"
         <div class=""form-group"">
             <label for=""Category"">Category</label>
@@ -85,7 +92,7 @@ using Fiorello.ViewModel;
 
         <button type=""submit"" class=""btn btn-primary me-2"">Submit</button>
         ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c0fcec967ce3f3bb9998fbeae49bc889e6441635879", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c0fcec967ce3f3bb9998fbeae49bc889e6441636073", async() => {
                     WriteLiteral("Cancel");
                 }
                 );

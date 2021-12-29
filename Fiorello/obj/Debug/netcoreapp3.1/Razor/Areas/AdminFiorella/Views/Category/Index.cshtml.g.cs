@@ -33,8 +33,15 @@ using Fiorello.ViewModel;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "D:\ASP.Net core\Fiorello\Fiorello\Areas\AdminFiorella\Views\_ViewImports.cshtml"
+using Fiorello.ViewModel.Slider;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a41a344f3b05ca1d7e8634d67b25afbc0d0e7b40", @"/Areas/AdminFiorella/Views/Category/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f25cbc239e8f3e104488d7127235499274a391e7", @"/Areas/AdminFiorella/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c517bccd6d43acb81128a3e3ec779f784b4b845d", @"/Areas/AdminFiorella/Views/_ViewImports.cshtml")]
     public class Areas_AdminFiorella_Views_Category_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Category>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-primary "), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -81,7 +88,7 @@ using Fiorello.ViewModel;
 #line hidden
 #nullable disable
             WriteLiteral("    <div class=\"row\">\r\n        <div class=\"col-lg-12 d-flex\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a41a344f3b05ca1d7e8634d67b25afbc0d0e7b406610", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a41a344f3b05ca1d7e8634d67b25afbc0d0e7b406804", async() => {
                 WriteLiteral("Create Category");
             }
             );
@@ -146,7 +153,7 @@ using Fiorello.ViewModel;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n\r\n\r\n                                        <td>\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a41a344f3b05ca1d7e8634d67b25afbc0d0e7b409804", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a41a344f3b05ca1d7e8634d67b25afbc0d0e7b409998", async() => {
                 WriteLiteral("\r\n                                                <i class=\"mdi mdi-eye\"></i>\r\n                                            ");
             }
             );
@@ -178,7 +185,7 @@ using Fiorello.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a41a344f3b05ca1d7e8634d67b25afbc0d0e7b4012255", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a41a344f3b05ca1d7e8634d67b25afbc0d0e7b4012449", async() => {
                 WriteLiteral("\r\n                                                <i class=\"mdi mdi-table-edit\"></i>\r\n                                            ");
             }
             );
@@ -210,7 +217,7 @@ using Fiorello.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a41a344f3b05ca1d7e8634d67b25afbc0d0e7b4014717", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a41a344f3b05ca1d7e8634d67b25afbc0d0e7b4014911", async() => {
                 WriteLiteral("\r\n                                                <i class=\"mdi mdi-delete-variant\"></i>\r\n                                            ");
             }
             );

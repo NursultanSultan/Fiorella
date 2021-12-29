@@ -2,39 +2,53 @@
 @{
     ViewData["Title"] = "Index";
     int count = 1;
+
 }
+<div class="row">
+    <div class="col-lg-12 d-flex">
+        <a class="btn btn-primary " asp-controller="Product" asp-action="Create">Create Product</a>
+    </div>
+</div>
+
 
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Product</h4>
-            
-                
+            <h4 class="card-title">Categories</h4>
+
             <div class="table-responsive">
-                <table class="table table-bordered mt-3">
+                <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th> # </th>
-                            <th> Product name </th>
-                            <th> Image </th>
-                            <th> Price </th>
-                            <th> Count</th>
+                            <th>№</th>
+                            <th>Category</th>
+                            <th>Settings</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var pr in Model)
+                        @foreach (var ct in Model)
                         {
                             <tr>
-                                <td> @count </td>
-                                <td> @pr.Name </td>
-                                <td> </td>
-                                <td> @pr.Price </td>
-                                <td> @pr.Conut </td>
-                                
+                                <td>@count</td>
+                                <td>@ct.Name</td>
+
+
+                                <td>
+                                    <a class="btn btn-info " asp-action="Detail" asp-route-id="@ct.Id">
+                                        <i class="mdi mdi-eye"></i>
+                                    </a>
+                                    <a class="btn btn-success " asp-action="Update" asp-route-id="@ct.Id">
+                                        <i class="mdi mdi-table-edit"></i>
+                                    </a>
+                                    <a class="btn btn-danger " asp-action="Delete" asp-route-id="@ct.Id">
+                                        <i class="mdi mdi-delete-variant"></i>
+                                    </a>
+                                </td>
                             </tr>
                             count++;
                         }
+
 
                     </tbody>
                 </table>

@@ -1,13 +1,11 @@
 ﻿using Fiorello.DAL;
 using Fiorello.Models;
 using Fiorello.Utilities.File;
+using Fiorello.ViewModel.Slider;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace Fiorello.Areas.AdminFiorella.Controllers
@@ -15,6 +13,7 @@ namespace Fiorello.Areas.AdminFiorella.Controllers
     [Area("AdminFiorella")]
     public class SliderController : Controller
     {
+        public int count { get; set; }
         private AppDBContext _context { get; }
         private IWebHostEnvironment _env { get; }
         public SliderController(AppDBContext context ,IWebHostEnvironment env)
@@ -28,41 +27,101 @@ namespace Fiorello.Areas.AdminFiorella.Controllers
             return View(_context.Sliders);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Slider slider)
+        public async Task<IActionResult> Create(MultipleSliderVM sliderVM)
         {
-            if (ModelState["Photo"].ValidationState == ModelValidationState.Invalid)return View();
+            #region Single File Upload
 
-            if (!slider.Photo.CheckFileType("image/"))
+            //if (ModelState["Photo"].ValidationState == ModelValidationState.Invalid) return View();
+
+            //if (!slider.Photo.CheckFileType("image/"))
+            //{
+            //    ModelState.AddModelError("Photo", "File must be image type");
+            //    return View();
+            //}
+
+            //if (!slider.Photo.CheckFileSize(200))
+            //{
+            //    ModelState.AddModelError("Photo", "File size must be less than 200kb");
+            //    return View();
+            //}
+
+            //string fileName = await slider.Photo.SaveFileAsync(_env.WebRootPath, "img");
+
+            //slider.Image = fileName;
+            //await _context.Sliders.AddAsync(slider);
+            //await _context.SaveChangesAsync();
+            //return RedirectToAction(nameof(Index));
+
+            #endregion
+
+            count = 0;
+            var dbcount = await _context.Sliders.ToListAsync();
+            foreach (var item in dbcount)
             {
-                ModelState.AddModelError("Photo", "File must be image type");
-                return View();
+               count++;
             }
 
-            if (!slider.Photo.CheckFileSize(200))
+            if (ModelState["Photos"].ValidationState == ModelValidationState.Invalid) return View();
+
+            foreach (var photo in sliderVM.Photos)
             {
-                ModelState.AddModelError("Photo", "File size must be less than 200kb");
-                return View();
+                if (!photo.CheckFileType("image/"))
+                {
+                    ModelState.AddModelError("Photos", $"{photo.FileName} must be image type");
+                    return View();
+                }
+
+                if (!photo.CheckFileSize(200))
+                {
+                    ModelState.AddModelError("Photos", $"{photo.FileName} size must be less than 200kb");
+                    return View();
+                }
+
             }
 
-            string fileName = await slider.Photo.SaveFileAsync(_env.WebRootPath, "img");
+            foreach (var photo in sliderVM.Photos)
+            {
+                count++;
+                if (count <= 5)
+                {
+                    string fileName = await photo.SaveFileAsync(_env.WebRootPath, "img");
 
-            slider.Image = fileName;
-            await _context.Sliders.AddAsync(slider);
+                    Slider slider = new Slider
+                    {
+                        Image = fileName
+                    };
+
+                    await _context.Sliders.AddAsync(slider);
+                }
+
+                else
+                {
+                    ModelState.AddModelError("Photos", "I agede 5 den yuxari olmaz ");
+                    return View();
+                }
+            }
+            
+            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+
         }
 
         public IActionResult Update(int Id)
         {
             return Json(Id);
         }
+
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]

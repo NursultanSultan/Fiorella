@@ -1,0 +1,35 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="card-body">
+    <h4 class="card-title">Create Product</h4>
+    <p class="card-description"> Basic form layout </p>
+    <form class="forms-sample" method="post">
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" placeholder="Product name">
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" class="form-control" >
+        </div>
+        <div class="form-group">
+            <label asp-for="CategoryId">Category</label>
+            <select asp-for="CategoryId">
+                @foreach (var category in (List<Category>) @ViewBag.Category)
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
+
+            </select>
+            
+        </div>
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <button class="btn btn-dark" asp-action="Index">Cancel</button>
+    </form>
+</div>
+

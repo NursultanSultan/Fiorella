@@ -33,8 +33,15 @@ using Fiorello.ViewModel;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "D:\ASP.Net core\Fiorello\Fiorello\Areas\AdminFiorella\Views\_ViewImports.cshtml"
+using Fiorello.ViewModel.Slider;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2d47ab5c93609c2e85a602b37aa9393d9e3d1829", @"/Areas/AdminFiorella/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f25cbc239e8f3e104488d7127235499274a391e7", @"/Areas/AdminFiorella/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c517bccd6d43acb81128a3e3ec779f784b4b845d", @"/Areas/AdminFiorella/Views/_ViewImports.cshtml")]
     public class Areas_AdminFiorella_Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
