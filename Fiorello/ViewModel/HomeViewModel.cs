@@ -10,7 +10,7 @@ namespace Fiorello.ViewModel
 
         public List<Category> Categories { get; set; }
 
-        public List<Product> Products { get; set; }
+        public List<Models.Product> Products { get; set; }
 
         public Sliderintro Sliderintro { get; set; }
 
