@@ -1,7 +1,9 @@
 using Fiorello.DAL;
+using Fiorello.Models;
 using Fiorello.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +32,10 @@ namespace Fiorello
             //services.AddMvc().AddRazorOptions(options => options.AllowRecompilingViewsOnFileChange = true);
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                    .AddEntityFrameworkStores<AppDBContext>()
+                    .AddDefaultTokenProviders();
+
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(20);
@@ -56,6 +62,7 @@ namespace Fiorello
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -142,6 +142,22 @@
                                 <span><a asp-controller="Product" asp-action="Basket">CART ($0)</a></span>
                                 
                             </li>
+
+                            <li>
+                                
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                       <h4>
+                                           @User.Identity.Name
+                                       </h4> 
+                                       <a asp-controller="Auth" asp-action="Logout"> Logout</a>
+                                }
+                                else
+                                {
+                                        <a asp-controller="Auth" asp-action="Login"> Login</a>
+                                }
+                                
+                            </li>
                         </ul>
                     </div>
 

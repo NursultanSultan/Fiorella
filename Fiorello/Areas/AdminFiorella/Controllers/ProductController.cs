@@ -72,7 +72,7 @@ namespace Fiorello.Areas.AdminFiorella.Controllers
         {
             ViewBag.Category = _context.Categories.ToList();
             return View();
-        }
+        } 
 
         //[HttpPost]
         //[ValidateAntiForgeryToken]

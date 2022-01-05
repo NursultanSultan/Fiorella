@@ -174,8 +174,6 @@ D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetC
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.CookiePolicy.dll
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cors.dll
-D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
-D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.dll
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
@@ -254,8 +252,6 @@ D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensi
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.Abstractions.dll
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.dll
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Http.dll
-D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Identity.Core.dll
-D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Identity.Stores.dll
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.Abstractions.dll
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.dll
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Configuration.dll
@@ -440,3 +436,10 @@ D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiore
 D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\Slider\Index.cshtml.g.cs
 D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\Slider\Create.cshtml.g.cs
 D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\Product\Create.cshtml.g.cs
+D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Views\Auth\Register.cshtml.g.cs
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\Shared\_ValidationPartial.cshtml.g.cs
