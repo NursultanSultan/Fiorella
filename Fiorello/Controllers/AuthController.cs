@@ -1,4 +1,5 @@
-﻿using Fiorello.Models;
+﻿using Fiorello.Email;
+using Fiorello.Models;
 using Fiorello.ViewModel.Auth;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -37,7 +38,21 @@ namespace Fiorello.Controllers
 
             IdentityResult identityResult = await _userManager.CreateAsync(newUser, register.Password);
 
-            if (!identityResult.Succeeded)
+            if (identityResult.Succeeded)
+            {
+                var token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
+                var confimationLink = Url.Action("ConfirmEmail", "Email", new { token, email = register.Email }, Request.Scheme);
+                EmailHelper emailHelper = new EmailHelper();
+                bool emailResponse = emailHelper.SendEmail(register.Email, confimationLink);
+
+                if (emailResponse)
+                    return RedirectToAction("Index");
+                else
+                {
+                    // log email failed 
+                }
+            }
+            else
             {
                 foreach (var error in identityResult.Errors)
                 {
@@ -46,6 +61,7 @@ namespace Fiorello.Controllers
                 }
                 return View(register);
             }
+
 
             await _signInManager.SignInAsync(newUser, false);
             return RedirectToAction("Index", "Home");

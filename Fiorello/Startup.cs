@@ -32,7 +32,10 @@ namespace Fiorello
             //services.AddMvc().AddRazorOptions(options => options.AllowRecompilingViewsOnFileChange = true);
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>( config =>
+            {
+                config.SignIn.RequireConfirmedEmail = true;
+            })
                     .AddEntityFrameworkStores<AppDBContext>()
                     .AddDefaultTokenProviders();
 
