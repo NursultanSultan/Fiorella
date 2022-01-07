@@ -441,5 +441,6 @@ D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.C
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 D:\ASP.Net core\Fiorello\Fiorello\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
-D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Views\Auth\Register.cshtml.g.cs
 D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorella\Views\Shared\_ValidationPartial.cshtml.g.cs
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+D:\ASP.Net core\Fiorello\Fiorello\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs

@@ -150,11 +150,11 @@
                                        <h4>
                                            @User.Identity.Name
                                        </h4> 
-                                       <a asp-controller="Auth" asp-action="Logout"> Logout</a>
+                                       <a asp-controller="Account" asp-action="Logout"> Logout</a>
                                 }
                                 else
                                 {
-                                        <a asp-controller="Auth" asp-action="Login"> Login</a>
+                                        <a asp-controller="Account" asp-action="Login" asp-route-ReturnUrl="@Context.Request.Path.Value"> Login</a>
                                 }
                                 
                             </li>

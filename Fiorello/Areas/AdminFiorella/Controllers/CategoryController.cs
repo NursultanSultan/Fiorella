@@ -1,5 +1,6 @@
 ﻿using Fiorello.DAL;
 using Fiorello.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 namespace Fiorello.Areas.AdminFiorella.Controllers
 {
     [Area("AdminFiorella")]
+    [Authorize]
     public class CategoryController : Controller
     {
         private AppDBContext _context { get; }
@@ -19,6 +21,7 @@ namespace Fiorello.Areas.AdminFiorella.Controllers
             _context = context;
         }
 
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View(_context.Categories);
